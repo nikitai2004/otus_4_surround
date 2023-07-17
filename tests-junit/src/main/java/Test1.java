@@ -1,6 +1,13 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 
+import static com.mysql.cj.conf.PropertyKey.logger;
+
 public class Test1{
+
+    private Logger loggger = LogManager.getLogger(Test1.class);
+
     @BeforeAll
     public static void beforeAll(){
         System.out.println("  === BeforeAll ===");
@@ -8,6 +15,12 @@ public class Test1{
 
     @BeforeEach
     public void before(){
+        logger.warn("warn");
+        logger.info("info");
+        logger.debug("debug");
+        logger.info("info");
+
+
         System.out.println("  === Before ===");
     }
 
