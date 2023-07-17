@@ -32,10 +32,11 @@ public class Test1 {
     }
 
     @Test
-    public void test1() {
+    public void test1()  {
         driver.get("https://otus.ru");
 
-        Assertions.assertEquals("Онлайн‑курсы для профессионалов, дистанционное обучение современным профессиям", driver.getTitle());
+        Assertions.assertEquals("2Онлайн‑курсы для профессионалов, дистанционное обучение современным профессиям", driver.getTitle());
+
     }
 
 //    @Test
@@ -54,14 +55,18 @@ public class Test1 {
 //    }
 
 
+
     @AfterEach
     public void closeAll() {
         System.out.println("  === AfterEach ===");
+
+        driver.quit();
     }
 
     @AfterAll
     public static void endAll() {
         System.out.println("  === AfterAll ===");
+
     }
 
 
