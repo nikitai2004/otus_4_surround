@@ -20,6 +20,7 @@ public class Test1 {
     public void before() {
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
+        logger.info("Драйвер запущен");
 
 
 //        logger.error("error");
@@ -59,8 +60,8 @@ public class Test1 {
     @AfterEach
     public void closeAll() {
         System.out.println("  === AfterEach ===");
-
         driver.quit();
+        logger.info("Драйвер закрыт");
     }
 
     @AfterAll
